@@ -768,6 +768,22 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
 .edit-toggle.show, .edit-toggle.active { opacity: 1; pointer-events: auto; }
 .editing [contenteditable="true"] { outline: 2px dashed rgba(184,240,60,.6); outline-offset: 4px; }
 .editing [contenteditable="true"]:focus { outline-color: var(--bici); }
+/* ODS */
+.ods { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+.odsc { --o: #888; position: relative; display: flex; flex-direction: column; padding: 0; overflow: hidden; border-top: 0; }
+.odsc .tile { background: var(--o); color: #fff; padding: 26px 30px 24px; display: flex; gap: 22px; align-items: center; }
+.odsc .tile .n { font: 900 96px/.82 var(--f-display); font-stretch: 112%; letter-spacing: -.03em; }
+.odsc .tile .nm { font: 800 27px/1.08 var(--f-display); font-stretch: 108%; text-transform: uppercase; }
+.odsc .tile .ico { font-size: 58px; margin-left: auto; stroke-width: 2.2; }
+.odsc .body { padding: 26px 30px 30px; display: flex; flex-direction: column; gap: 18px; flex: 1; }
+.odsc .meta { font-size: 21px; line-height: 1.38; color: var(--muted); }
+.odsc .meta b { display: inline-block; font: 700 17px/1 var(--f-mono); color: var(--fg); background: rgba(255,255,255,.08); border: 1.5px solid var(--o); border-radius: 6px; padding: 6px 9px 4px; margin: 0 8px 4px 0; vertical-align: 2px; }
+.odsc .cali { margin-top: auto; border-top: 1.5px dashed var(--line); padding-top: 18px; }
+.odsc .cali small { font: 700 15px/1 var(--f-mono); letter-spacing: .14em; text-transform: uppercase; color: var(--o); filter: brightness(1.25); }
+.odsc .cali p { font-size: 22px; line-height: 1.34; margin-top: 10px; }
+.odsc .cali p strong { font: 800 34px/1 var(--f-display); color: var(--fg); }
+.ods-foot { margin-top: 30px; font-size: 24px; line-height: 1.4; color: var(--muted); max-width: 1500px; }
+.ods-foot b { color: var(--fg); }
 </style>
 </head>
 <body>
@@ -860,6 +876,45 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
     </div>
   </div>
   <aside class="notes">Presenta: [Integrante 1]. Bloque 1: [Integrante 1]. Bloque 2: [Integrante 2]. Bloque 3: [Integrante 3]. Bloque 4: [Integrante 4]. Explicar en una frase la diferencia entre mitigación y adaptación.</aside>
+</section>
+
+<!-- ===================================================================
+     MARCO · OBJETIVOS DE DESARROLLO SOSTENIBLE
+     =================================================================== -->
+<section class="slide" data-theme="dark" data-sec="0" data-id="ods">
+  <div class="pad" style="top:68px">
+    <div class="kicker rv"><span class="st">→</span>Marco · Agenda 2030</div>
+    <h2 class="title rv" style="--d:80;font-size:62px">La movilidad de Cali toca <em>tres Objetivos de Desarrollo Sostenible</em></h2>
+    <div class="ods">
+      <div class="card odsc rv" style="--o:#4C9F38;--d:250">
+        <div class="tile"><span class="n">3</span><span class="nm">Salud y<br>bienestar</span><svg class="ico"><use href="#i-heart"/></svg></div>
+        <div class="body">
+          <p class="meta"><b>3.6</b>Reducir a la mitad las muertes y lesiones por siniestros viales (a 2030).</p>
+          <p class="meta"><b>3.9</b>Reducir las muertes y enfermedades por contaminación del aire.</p>
+          <div class="cali"><small>En Cali</small><p><strong>327</strong> muertes viales en 2025, y los vehículos generan el <b>93%</b> del material particulado.</p></div>
+        </div>
+      </div>
+      <div class="card odsc rv" style="--o:#FD9D24;--d:400">
+        <div class="tile"><span class="n">11</span><span class="nm">Ciudades y comunidades sostenibles</span><svg class="ico"><use href="#i-bus"/></svg></div>
+        <div class="body">
+          <p class="meta"><b>11.2</b>Transporte seguro, asequible, accesible y sostenible para todos, con énfasis en el transporte público.</p>
+          <p class="meta"><b>11.6</b>Reducir el impacto ambiental de las ciudades, en especial en la calidad del aire.</p>
+          <div class="cali"><small>En Cali</small><p>El MIO mueve el <strong>21%</strong> de los viajes con una cuarta parte de su flota parada.</p></div>
+        </div>
+      </div>
+      <div class="card odsc rv" style="--o:#3F7E44;--d:550">
+        <div class="tile"><span class="n">13</span><span class="nm">Acción por<br>el clima</span><svg class="ico"><use href="#i-leaf"/></svg></div>
+        <div class="body">
+          <p class="meta"><b>13.1</b>Fortalecer la resiliencia y la adaptación a los riesgos del clima.</p>
+          <p class="meta"><b>13.2</b>Incorporar medidas contra el cambio climático en las políticas y los planes.</p>
+          <div class="cali"><small>En Cali</small><p>El transporte es el <strong>51%</strong> de la huella de carbono de la ciudad.</p></div>
+        </div>
+      </div>
+    </div>
+    <p class="ods-foot rv" style="--d:750">Cada bloque de la presentación responde a estas metas: <b>mitigación</b> (ODS 3 y 13), <b>adaptación</b> (ODS 13) y <b>un transporte público que funcione</b> (ODS 11).</p>
+  </div>
+  <div class="src">Naciones Unidas (2015, 2020); Alcaldía de Cali (2025b, 2026a); DANE (2026)</div>
+  <aside class="notes">Presenta: Jose Giraldo. Los ODS son los 17 objetivos de la Agenda 2030 de la ONU, aprobada en 2015. La meta 3.6 tenía como plazo original 2020; la Asamblea General la amplió a 2030 con la resolución 74/299 (Decenio de Acción para la Seguridad Vial 2021–2030). La meta 3.9 incluye la contaminación del aire, el agua y el suelo. Las cifras de Cali son las mismas del diagnóstico: 327 muertes viales en 2025 (Observatorio de Movilidad), 93% del material particulado y 51% de la huella de carbono atribuidos a los vehículos, y 21% de los viajes en MIO (Cali Cómo Vamos). Los colores de las tarjetas son los oficiales de cada ODS.</aside>
 </section>
 
 <!-- ===================================================================
@@ -1621,12 +1676,14 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
      =================================================================== -->
 <section class="slide" data-theme="light" data-sec="5" data-id="referencias-4">
   <div class="pad" style="top:64px">
-    <div class="refs-title"><div><div class="kicker"><span class="st">4/4</span>Referencias · Diagnóstico global</div></div><span class="refs-note">“s.f.”: sin fecha de publicación visible en la fuente.</span></div>
+    <div class="refs-title"><div><div class="kicker"><span class="st">4/4</span>Referencias · Diagnóstico global y ODS</div></div><span class="refs-note">“s.f.”: sin fecha de publicación visible en la fuente.</span></div>
     <div class="refs">
       <p>Agencia Internacional de Energía [IEA]. (2020). <i>Transport</i> [Página temática]. <span class="u">https://www.iea.org/topics/transport</span></p>
       <p>Agencia Internacional de Energía [IEA]. (2026). <i>Global EV Outlook 2026</i>. <span class="u">https://www.iea.org/reports/global-ev-outlook-2026/executive-summary</span></p>
       <p>Alcaldía Mayor de Bogotá. (2025). <i>En Bogotá, mi Ciudad, mi Casa nos unimos al Día Mundial de la Bicicleta</i>. <span class="u">https://bogota.gov.co/en/node/257733</span></p>
       <p>Ciudad de Copenhague. (2022). <i>The Bicycle Account 2022</i>. Københavns Kommune.</p>
+      <p>Naciones Unidas. (2015). <i>Transformar nuestro mundo: la Agenda 2030 para el Desarrollo Sostenible</i> (A/RES/70/1). <span class="u">https://www.un.org/es/ga/70/resolutions.shtml</span></p>
+      <p>Naciones Unidas. (2020). <i>Mejoramiento de la seguridad vial en el mundo</i> (A/RES/74/299). <span class="u">https://undocs.org/es/A/RES/74/299</span></p>
       <p>Organización Mundial de la Salud [OMS]. (2023). <i>Global status report on road safety 2023</i>. <span class="u">https://www.who.int/publications/i/item/9789240086517</span></p>
       <p>Pauta. (2025, 31 de diciembre). <i>Red Movilidad alcanza casi 4.000 buses eléctricos y posiciona a Santiago como líder mundial fuera de China</i>. <span class="u">https://www.pauta.cl/ciudad/2025/12/31/red-movilidad-alcanza-casi-4-000-buses-electricos-y-posiciona-a-santiago-como-lider-mundial-fuera-de-china.html</span></p>
       <p>Portafolio. (2025). <i>Bogotá adjudica 596 nuevos buses 100% eléctricos</i>. <span class="u">https://www.portafolio.co/economia/bogota-adjudica-596-nuevos-buses-100-electricos-548000</span></p>
