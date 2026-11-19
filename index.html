@@ -266,9 +266,38 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
 /* ===========================================================
    S5 · MIO EN CRISIS
    =========================================================== */
-.mio-crisis .photo { right: 0; top: 0; bottom: 0; width: 720px; clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%); }
+.mstats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 24px; }
+.mstats .card { padding: 18px 20px 20px; }
+.mstats .num { font-size: 52px; }
+.mstats b { display: block; font: 800 19px/1.15 var(--f-display); font-stretch: 105%; margin-top: 8px; }
+.mstats p { font-size: 16px; line-height: 1.35; color: var(--muted); margin-top: 6px; }
+.mstats .alert { border-color: rgba(255,90,54,.55); background: rgba(255,90,54,.1); }
+.mstats .alert .num { color: var(--alerta); }
+.seg { margin-top: 22px; }
+.seg-h { display: flex; gap: 22px; align-items: center; font: 600 16px/1 var(--f-mono); color: var(--muted); letter-spacing: .04em; }
+.seg-h b { font-weight: 700; color: var(--papel); letter-spacing: .12em; text-transform: uppercase; margin-right: auto; }
+.seg-h i { display: inline-block; width: 14px; height: 14px; border-radius: 3px; margin-right: 7px; vertical-align: -2px; }
+.seg-r { display: grid; grid-template-columns: 300px 1fr 190px; gap: 18px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line); }
+.seg-r.total { border-bottom: 0; }
+.seg-r .lbl { font: 700 18px/1.15 var(--f-display); font-stretch: 104%; }
+.seg-r .lbl small { display: block; font: 400 14px/1.2 var(--f-mono); color: var(--muted); margin-top: 3px; }
+.seg-r.total .lbl { color: var(--bici); }
+.seg-r .bars { display: grid; gap: 4px; background: rgba(241,236,225,.06); border-radius: 6px; padding: 4px; }
+.seg-r .bars div { height: 11px; border-radius: 4px; }
+.seg-r .bars .a { background: #5B7F99; }
+.seg-r .bars .b { background: var(--mio); }
+.seg-r .bars .b.bad { background: var(--alerta); }
+.seg-r .val { font: 600 17px/1 var(--f-mono); color: var(--muted); text-align: right; }
+.seg-r .val b { color: var(--papel); font-size: 19px; }
+.seg-r .val b.bad { color: var(--alerta); }
+.energy { margin-top: 18px; }
+.ebar { display: flex; height: 40px; border-radius: 10px; overflow: hidden; margin-top: 10px; background: #3C4A50; }
+.ebar .t { flex: 1; display: flex; align-items: center; padding: 0 16px; font: 500 15px/1.2 var(--f-mono); color: #D7D1C5; background: #3C4A50; }
+.ecap { font-size: 17px; line-height: 1.35; color: var(--muted); margin-top: 8px; }
+.ecap b { color: var(--bici); }
+.mio-crisis .photo { right: 0; top: 0; bottom: 0; width: 520px; clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%); }
 .mio-crisis .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,20,23,.55), transparent 40%); }
-.mio-crisis .pad { right: 760px; }
+.mio-crisis .pad { right: 580px; }
 .dots { display: grid; grid-template-columns: repeat(50, 13px); gap: 5px; margin-top: 18px; }
 .dots i { width: 13px; height: 13px; border-radius: 50%; background: rgba(241,236,225,.2); }
 .dots i.lit { background: var(--bici); box-shadow: 0 0 10px rgba(184,240,60,.7); transform: scale(0); transition: transform .5s var(--ease); }
@@ -415,18 +444,19 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
 /* ===========================================================
    S13 · RENOVACIÓN DEL MIO (tablero de rutas)
    =========================================================== */
-.renov { display: grid; grid-template-columns: 1fr 560px; gap: 56px; margin-top: 34px; }
+.renov { display: grid; grid-template-columns: 1fr 560px; gap: 56px; margin-top: 26px; }
 .board { background: #050809; border-radius: 18px; border: 2px solid #26343B; overflow: hidden; font-family: var(--f-mono); }
-.board-row { display: grid; grid-template-columns: 1.6fr .9fr .8fr 1.5fr; gap: 16px; padding: 20px 26px; border-bottom: 1.5px dashed #24323A; align-items: center; font-size: 21px; line-height: 1.25; }
+.board-row { display: grid; grid-template-columns: 1.6fr .9fr .8fr 1.5fr; gap: 16px; padding: 13px 24px; border-bottom: 1.5px dashed #24323A; align-items: center; font-size: 21px; line-height: 1.25; }
 .board-row:last-child { border-bottom: 0; }
 .board-head { background: var(--senal); color: var(--tinta); font-weight: 700; font-size: 16px; letter-spacing: .12em; text-transform: uppercase; border-bottom: 0; }
 .board .e { color: var(--bici); font-weight: 700; }
 .board .d { color: #9AA8AE; font-weight: 700; }
-.board .s { color: #C9C2B5; font-size: 18px; }
+.board .s { color: #C9C2B5; font-size: 16px; }
 .board-row.goal { background: rgba(47,140,255,.12); }
+.board-row.total { background: rgba(184,240,60,.08); }
 .board-row.goal .e, .board-row.goal .d { font-size: 26px; }
-.waffle { display: grid; grid-template-columns: repeat(22, 20px); gap: 5px; margin-top: 20px; }
-.waffle i { width: 20px; height: 20px; border-radius: 4px; background: #5B686E; opacity: 0; transition: opacity .3s; }
+.waffle { display: grid; grid-template-columns: repeat(27, 16px); gap: 4px; margin-top: 18px; }
+.waffle i { width: 16px; height: 16px; border-radius: 4px; background: #5B686E; opacity: 0; transition: opacity .3s; }
 .waffle i.e { background: var(--bici); }
 .slide.visible .waffle i { opacity: 1; }
 .debate .num { font-size: 96px; color: var(--senal); }
@@ -927,20 +957,29 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
   <span class="credit">Foto: C arango · Dominio público · Wikimedia Commons</span>
   <div class="pad">
     <div class="kicker rv"><span class="st">01</span>Diagnóstico · MIO</div>
-    <h2 class="title rv" style="--d:80;font-size:62px">El MIO es un sistema en crisis que <em>empieza a renovarse</em></h2>
-    <div class="dots rv" style="--d:250" id="dots790" data-total="790" data-lit="41"></div>
-    <div class="dots-legend rv" style="--d:400">
-      <div><div class="num"><span data-count="790">790</span></div><span>buses en la flota, que deben<br>reemplazarse de aquí a 2040</span></div>
-      <div><div class="num acc"><span data-count="41">41</span></div><span>eléctricos: 35 complementarios<br>y 6 articulados (sep. 2026)</span></div>
+    <h2 class="title rv" style="--d:80;font-size:56px">El MIO opera con <em>una cuarta parte de su flota parada</em></h2>
+    <div class="mstats">
+      <div class="card rv" style="--d:200"><div class="num"><span data-count="93">93</span></div><b>rutas</b><p>11 troncales, 20 pretroncales y 62 alimentadoras, más 1 cable, 7 terminales y 3 depósitos.</p></div>
+      <div class="card rv" style="--d:300"><div class="num"><span data-count="89.3" data-dec="1">89,3</span> M</div><b>pasajeros en 2025</b><p>21% del reparto modal, frente a ~25–26% de la moto.</p></div>
+      <div class="card alert rv" style="--d:400"><div class="num"><span data-count="26.5" data-dec="1">26,5</span>%</div><b>de los 793 buses no operó en 2025</b><p>En el III trimestre de 2026p fue el 24,4% de 788.</p></div>
+      <div class="card rv" style="--d:500"><div class="num">3</div><b>tipos de bus</b><p>Articulado ~18,3 m (140–160 pas.), padrón 12 m (80–90) y complementario ~8,5 m (50–56).</p></div>
     </div>
-    <div class="pair">
-      <div class="rv" style="--d:550"><div class="num"><span data-count="86.3" data-dec="1">86,3</span> M <span class="delta up">+10,6%</span></div><p>viajes pagos en 2024 frente a 2023.</p></div>
-      <div class="rv" style="--d:650"><div class="num"><span data-count="20.9" data-dec="1">20,9</span> M <span class="delta down">−1,9%</span></div><p>pasajeros en el primer trimestre de 2026.</p></div>
+    <div class="seg rv" style="--d:600">
+      <div class="seg-h"><b>Operativos por segmento</b><span><i style="background:#5B7F99"></i>2025</span><span><i style="background:var(--mio)"></i>III trim. 2026p</span></div>
+      <div class="seg-r"><div class="lbl">Troncal<small>124 de 166 → 133 de 168</small></div><div class="bars"><div class="grow a" style="width:74.7%;--d:700"></div><div class="grow b" style="width:79.2%;--d:780"></div></div><div class="val">74,7% → <b>79,2%</b></div></div>
+      <div class="seg-r"><div class="lbl">Padrón y complementario<small>334 de 413 → 341 de 413</small></div><div class="bars"><div class="grow a" style="width:80.9%;--d:760"></div><div class="grow b" style="width:82.6%;--d:840"></div></div><div class="val">80,9% → <b>82,6%</b></div></div>
+      <div class="seg-r"><div class="lbl">Alimentador<small>125 de 214 → 122 de 207</small></div><div class="bars"><div class="grow a" style="width:58.4%;--d:820"></div><div class="grow b" style="width:58.9%;--d:900"></div></div><div class="val">58,4% → <b>58,9%</b></div></div>
+      <div class="seg-r"><div class="lbl">MIO Cable (cabinas)*<small>40 de 60 → 27 de 60</small></div><div class="bars"><div class="grow a" style="width:66.7%;--d:880"></div><div class="grow b bad" style="width:45%;--d:960"></div></div><div class="val">66,7% → <b class="bad">45,0%</b></div></div>
+      <div class="seg-r total"><div class="lbl">Total buses<small>583 de 793 → ≈596 de 788</small></div><div class="bars"><div class="grow a" style="width:73.5%;--d:940"></div><div class="grow b" style="width:75.6%;--d:1020"></div></div><div class="val">73,5% → <b>75,6%</b></div></div>
     </div>
-    <p class="quote-bar rv" style="--d:800">Metrocali habla de un plan de salvamento para el MIO, amenazado por una severa crisis estructural.</p>
+    <div class="energy rv" style="--d:900">
+      <div class="seg-h"><b>Matriz energética · sep. 2026</b><span>0 híbridos</span></div>
+      <div class="ebar"><div class="grow" style="width:5.2%;background:var(--bici);--d:1100"></div><div class="grow t" style="--d:1150">~752 térmicos de concesionarios privados: diésel Euro II–IV y GNV (desde 2019), sin desglose público</div></div>
+      <p class="ecap"><b>41 eléctricos (5,2%)</b>: 35 busetones BYD y 6 articulados. &nbsp;* El MIO Cable estuvo suspendido tras el sismo del 10 de agosto de 2026.</p>
+    </div>
   </div>
-  <div class="src" style="right:820px">Alcaldía de Cali (2025c, 2026f); Metro Cali (2025); El Carro Colombiano (2026); El País (2026b)</div>
-  <aside class="notes">Presenta: [Integrante 1]. El dato de 20,9 millones es del DANE, citado por El Carro Colombiano. Metrocali no publica en sus boletines el desglose de la flota por tipología (articulado, padrón, complementario) ni por combustible; se puede pedir por derecho de petición.</aside>
+  <div class="src" style="right:620px">DANE (2026); Metro Cali (2026a, 2026b); CW+ (2026); Alcaldía de Cali (2026f); Semana (2026)</div>
+  <aside class="notes">Presenta: Jose Giraldo. El MIO sí está caracterizado: Metro Cali y el DANE (ETUP) publican la flota por segmento. En 2025 hubo 583 buses operativos de 793 (73,5%); en el III trimestre de 2026p, el DANE reporta unos 596 en servicio de 788 afiliados (75,6%, es decir 24,4% fuera de servicio). Los alimentadores (58,9%) y el MIO Cable (45,0%) son los más afectados; el Cable estuvo suspendido tras el sismo del 10 de agosto. La matriz energética (41 eléctricos, 0 híbridos, ~752 térmicos) usa la base de 793 buses; no hay desglose público entre diésel y GNV. La participación modal (21% MIO frente a ~25–26% moto) viene de la encuesta de percepción de Cali Cómo Vamos.</aside>
 </section>
 
 <!-- ===================================================================
@@ -954,10 +993,10 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
       <div class="score-row score-head rv" style="--d:150"><span>Indicador</span><span>El mundo y los referentes</span><span>Cali</span><span>Veredicto</span></div>
       <div class="score-row rv" style="--d:250"><div class="ind"><svg class="ico"><use href="#i-air"/></svg>Peso del transporte en las emisiones</div><div class="w"><b>~24%</b> del CO₂ de la energía en el mundo</div><div class="c"><b>51%</b> de la huella de carbono de la ciudad</div><span class="verdict v-bad">Atrasada</span></div>
       <div class="score-row rv" style="--d:350"><div class="ind"><svg class="ico"><use href="#i-car"/></svg>Carros eléctricos nuevos</div><div class="w"><b>25%</b> de las ventas en el mundo (2025)</div><div class="c"><b>16,1%</b> 100% eléctricos en Colombia; con híbridos, 46,2% (2026)</div><span class="verdict v-mid">En camino</span></div>
-      <div class="score-row rv" style="--d:450"><div class="ind"><svg class="ico"><use href="#i-bus"/></svg>Buses eléctricos</div><div class="w"><b>3.849</b> en Santiago y <b>~1.485</b> en Bogotá</div><div class="c"><b>41</b> en el MIO, de 790 buses</div><span class="verdict v-bad">Atrasada</span></div>
+      <div class="score-row rv" style="--d:450"><div class="ind"><svg class="ico"><use href="#i-bus"/></svg>Buses eléctricos</div><div class="w"><b>3.849</b> en Santiago y <b>~1.485</b> en Bogotá</div><div class="c"><b>41</b> en el MIO, de 793 buses (5,2%)</div><span class="verdict v-bad">Atrasada</span></div>
       <div class="score-row rv" style="--d:550"><div class="ind"><svg class="ico"><use href="#i-bike"/></svg>Bicicleta</div><div class="w"><b>677 km</b> y 7,3% de los viajes en Bogotá; 35% en Copenhague</div><div class="c"><b>165 km</b> y entre 3% y 5% de los viajes</div><span class="verdict v-bad">Atrasada</span></div>
       <div class="score-row rv" style="--d:650"><div class="ind"><svg class="ico"><use href="#i-heart"/></svg>Seguridad vial</div><div class="w">Meta de la ONU: <b>reducir a la mitad</b> las muertes para 2030</div><div class="c"><b>2025</b>, el año con menos muertes viales de la última década</div><span class="verdict v-ok">Avanza</span></div>
-      <div class="score-row rv" style="--d:750"><div class="ind"><svg class="ico"><use href="#i-doc"/></svg>Datos de movilidad</div><div class="w">Bogotá hizo su encuesta de movilidad en <b>2023</b></div><div class="c">La última encuesta de Cali es de <b>2015</b></div><span class="verdict v-bad">Atrasada</span></div>
+      <div class="score-row rv" style="--d:750"><div class="ind"><svg class="ico"><use href="#i-doc"/></svg>Datos de movilidad</div><div class="w">Bogotá hizo su encuesta de movilidad en <b>2023</b></div><div class="c">La encuesta vigente de Cali es de <b>2015</b>; la nueva está en campo desde ago. 2026</div><span class="verdict v-bad">Atrasada</span></div>
     </div>
     <div class="tally rv" style="--d:900">
       <div class="tally-bar"><div class="grow" style="flex:4;background:var(--alerta-ink);--d:1000">4 ATRASADA</div><div class="grow" style="flex:1;background:var(--senal-ink);--d:1100">1</div><div class="grow" style="flex:1;background:var(--bici-ink);--d:1200">1</div></div>
@@ -1176,24 +1215,25 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
       <div>
         <div class="board rv" style="--d:250">
           <div class="board-row board-head"><span>Compra</span><span>Eléctricos</span><span>Diésel Euro VI</span><span>Estado</span></div>
-          <div class="board-row"><span>Primera compra (feb. 2026)</span><span class="e">35 BYD</span><span class="d">12</span><span class="s">Complementarios, operación alimentadora</span></div>
-          <div class="board-row"><span>Segunda compra (aprobada ago. 2026)</span><span class="e">66</span><span class="d">274</span><span class="s">Aprobada por el Concejo</span></div>
-          <div class="board-row"><span>Reposición del operador GIT Masivo</span><span class="e">5 articulados</span><span class="d">—</span><span class="s">En operación desde sep. 2026</span></div>
+          <div class="board-row"><span>Primera compra pública (feb. 2026)</span><span class="e">33</span><span class="d">12</span><span class="s">45 busetones; llegada prevista en 2026</span></div>
+          <div class="board-row"><span>Segunda compra (Acuerdo 096, ago. 2026)</span><span class="e">66</span><span class="d">274</span><span class="s">340 buses; empréstito de $330.000 M respaldado con sobretasa a la gasolina</span></div>
+          <div class="board-row"><span>Reposición privada GIT Masivo</span><span class="e">5 articulados</span><span class="d">—</span><span class="s">En operación desde el 23 sep. 2026; ya están entre los 41 eléctricos actuales</span></div>
+          <div class="board-row total"><span><b>Total flota pública nueva (2026–2027)</b></span><span class="e">99 (25,7%)</span><span class="d">286 (74,3%)</span><span class="s">385 buses: 96,25% de la meta de 400 del PDD 2024–2027</span></div>
           <div class="board-row goal"><span><b>Meta de flota a 2040</b></span><span class="e">380</span><span class="d">409</span><span class="s">Plan de renovación total</span></div>
         </div>
-        <p class="note rv" style="--d:500;margin-top:22px;font-size:21px">Los buses nuevos reemplazan vehículos Euro II, III y IV. También se reactivó la chatarrización del transporte colectivo, suspendida más de 10 años.</p>
+        <p class="note rv" style="--d:500;margin-top:18px;font-size:19px">Los buses nuevos sustituyen unidades Euro II, III y IV. Siguen la licitación del Tramo 3 de la Troncal Oriental y la segunda fase de chatarrización del transporte colectivo, suspendida más de 10 años.</p>
       </div>
       <div class="debate rv-r" style="--d:450">
         <span class="chip" style="--sec:var(--senal)">Para el debate</span>
-        <div class="num" style="margin-top:22px"><span data-count="286">286</span><span style="font-size:.45em;color:var(--papel)"> de 387</span></div>
-        <p>buses de las dos compras públicas <b>son diésel.</b></p>
-        <div class="waffle" id="waffle387" data-total="387" data-e="101"></div>
-        <div class="wlegend"><span><i style="background:var(--bici)"></i>Eléctricos · 101</span><span><i style="background:#5B686E"></i>Diésel · 286</span></div>
+        <div class="num" style="margin-top:22px"><span data-count="286">286</span><span style="font-size:.45em;color:var(--papel)"> de 385</span></div>
+        <p>buses públicos nuevos <b>serán diésel (74,3%).</b></p>
+        <div class="waffle" id="waffle387" data-total="385" data-e="99"></div>
+        <div class="wlegend"><span><i style="background:var(--bici)"></i>Eléctricos · 99</span><span><i style="background:#5B686E"></i>Diésel · 286</span></div>
       </div>
     </div>
   </div>
-  <div class="src">Metro Cali (2026); Alcaldía de Cali (2025c, 2026c, 2026d, 2026f); El Tiempo (2026)</div>
-  <aside class="notes">Presenta: [Integrante 3]. El cálculo es del grupo: 12 + 274 = 286 diésel de 35 + 12 + 66 + 274 = 387 buses. En el Concejo se cuestionó que el 70% de los buses de la compra fueran diésel (El Tiempo, 2026). La meta a 2040 es del plan de la Alcaldía de junio de 2025.</aside>
+  <div class="src">Metro Cali (2026a, 2026b); Alcaldía de Cali (2025c, 2026c, 2026d, 2026f); El Tiempo (2026); Semana (2026)</div>
+  <aside class="notes">Presenta: Santiago Camayo. Cálculo con las cifras de Metro Cali: primera compra 45 busetones (33 eléctricos y 12 diésel) más segunda compra 340 buses (66 eléctricos y 274 diésel Euro VI) = 385 buses; 99 eléctricos (25,7%) y 286 diésel (74,3%). Equivale a 96,25% de la meta de 400 buses del Plan Distrital de Desarrollo (Metro Cali reporta 96,5%). Los 35 busetones BYD en operación y los 5 articulados de GIT Masivo son flota privada y ya están dentro de los 41 eléctricos actuales: no se suman a la compra pública. El empréstito de $330.000 millones son $45.000 millones de 2026 más $285.000 millones de vigencias futuras de 2027. En el Concejo se cuestionó que el 70% de los buses fuera diésel (El Tiempo, 2026). La meta a 2040 es del plan de la Alcaldía de junio de 2025.</aside>
 </section>
 
 <!-- ===================================================================
@@ -1234,7 +1274,7 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
     <h2 class="title rv" style="--d:80">Seis obstáculos <em>frenan la transición</em></h2>
     <div class="signs">
       <div class="card sgn rv" style="--d:200"><div class="diamond"><svg class="ico"><use href="#i-coin"/></svg></div><div><h3>Financiación</h3><p>La Nación negó la cofinanciación del 70% del tren y el metro no tiene fuentes.</p></div></div>
-      <div class="card sgn rv" style="--d:300"><div class="diamond"><svg class="ico"><use href="#i-bus"/></svg></div><div><h3>Crisis del MIO</h3><p>Plan de salvamento y caída de pasajeros en 2026.</p></div></div>
+      <div class="card sgn rv" style="--d:300"><div class="diamond"><svg class="ico"><use href="#i-bus"/></svg></div><div><h3>Crisis del MIO</h3><p>Plan de salvamento y una cuarta parte de la flota fuera de servicio.</p></div></div>
       <div class="card sgn rv" style="--d:400"><div class="diamond"><svg class="ico"><use href="#i-moto"/></svg></div><div><h3>Motos sin incentivos</h3><p>Sin SOAT diferencial y con exención de pico y placa para todas.</p></div></div>
       <div class="card sgn rv" style="--d:500"><div class="diamond"><svg class="ico"><use href="#i-car"/></svg></div><div><h3>Híbridos como eléctricos</h3><p>Cali exime del pico y placa a los híbridos de gasolina.</p></div></div>
       <div class="card sgn rv" style="--d:600"><div class="diamond"><svg class="ico"><use href="#i-plug"/></svg></div><div><h3>Recarga pública</h3><p>Celsia, pionera en el Valle, salió del negocio de estaciones de carga.</p></div></div>
@@ -1254,14 +1294,14 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
     <div class="kicker rv"><span class="st">04</span>Obstáculos · Datos</div>
     <h2 class="title rv" style="--d:80">La información sobre ambiente y movilidad es <em>escasa y difícil de encontrar</em></h2>
     <div class="data3">
-      <div class="card rv" style="--d:250"><div class="vis"><div class="cal">2015<span class="tear">¿y después?</span></div></div><h3>Desactualizada</h3><p>El último estudio detallado de movilidad de Cali es la encuesta de 2015.</p></div>
-      <div class="card rv" style="--d:400"><div class="vis"><div class="puzzle"><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i></div></div><h3>Incompleta</h3><p>No encontramos publicada la flota del MIO por tipo de bus y combustible, ni datos de movilidad por comuna.</p></div>
+      <div class="card rv" style="--d:250"><div class="vis"><div class="cal">2015<span class="tear">nueva: en campo</span></div></div><h3>Desactualizada</h3><p>La encuesta origen-destino vigente es de 2015. Desde agosto de 2026 está en campo la nueva Gran Encuesta Regional de Movilidad.</p></div>
+      <div class="card rv" style="--d:400"><div class="vis"><div class="puzzle"><i></i><i></i><i class="x"></i><i></i><i></i><i class="x"></i><i></i><i class="x"></i><i></i><i></i><i></i><i class="x"></i></div></div><h3>Incompleta</h3><p>Falta el desglose público de buses diésel y GNV de los concesionarios privados del MIO, y un corte abierto del RUNT 2025–2026 para Cali.</p></div>
       <div class="card rv" style="--d:550"><div class="vis"><div class="scatter"><span style="left:0;top:8px">DAGMA</span><span style="left:120px;top:70px;background:var(--senal-ink)">CVC</span><span style="left:190px;top:0;background:#56636A">PDF</span><span style="left:20px;top:86px;background:#56636A">prensa</span></div></div><h3>Dispersa</h3><p>La calidad del aire urbana la mide el DAGMA y la rural la CVC, en portales e informes distintos.</p></div>
     </div>
     <p class="foot-statement rv" style="--d:750">Sin datos abiertos y fáciles de usar, la ciudadanía <span class="acc">no puede seguir ni exigir</span> la transición.</p>
   </div>
-  <div class="src">El País (s.f.-a); DAGMA (s.f.); CVC (2026); búsqueda del grupo</div>
-  <aside class="notes">Presenta: [Integrante 4]. Contar la experiencia del grupo al buscar datos para esta presentación: varios datos solo aparecían en prensa, sin fecha o sin el documento original.</aside>
+  <div class="src">El País (s.f.-a); DAGMA (s.f.); CVC (2026); DANE (2026); El País (2026e); búsqueda del grupo</div>
+  <aside class="notes">Presenta: Manuel Villamarin. La flota del MIO por segmento sí es pública (Metro Cali y DANE). El vacío específico es que no se publica el desglose entre buses diésel y GNV de los concesionarios privados, ni hay un corte abierto municipal 2025–2026 del RUNT para Cali. La encuesta de movilidad vigente es la de 2015; la nueva Encuesta Regional de Movilidad, anunciada a finales de julio, se levanta en campo desde agosto de 2026 en Cali y cinco municipios. Contar la experiencia del grupo: varios datos solo aparecían en prensa, sin fecha o sin el documento original.</aside>
 </section>
 
 <!-- ===================================================================
@@ -1304,14 +1344,14 @@ img, video, canvas, svg { max-width: 100%; max-height: 100%; }
       <div class="op rv" style="--d:350">÷</div>
       <div class="card rv" style="--d:450"><div class="lab">Por bus</div><div class="num">20<small>t</small></div><p>de CO₂ al año por cada bus eléctrico (520 t ÷ 26 buses).</p></div>
       <div class="op rv" style="--d:550">×</div>
-      <div class="card hero rv-s" style="--d:650"><div class="lab">Estimación del grupo</div><div class="num"><span data-count="2140">2.140</span><small>t</small></div><p>de CO₂ al año podrían evitar los 107 buses eléctricos entre la flota actual y la compra aprobada (41 + 66).</p></div>
+      <div class="card hero rv-s" style="--d:650"><div class="lab">Estimación del grupo</div><div class="num"><span data-count="2800">2.800</span><small>t</small></div><p>de CO₂ al año podrían evitar los 140 buses eléctricos acumulados del sistema: 41 actuales + 99 públicos nuevos (33 + 66).</p></div>
     </div>
-    <div class="buses107" id="buses107" aria-label="107 buses: 41 actuales y 66 de la compra aprobada"></div>
-    <div class="wlegend rv" style="--d:900"><span><i style="background:var(--mio)"></i>41 en operación</span><span><i style="background:var(--bici)"></i>66 de la compra aprobada</span></div>
-    <p class="eq rv" style="--d:1000">20 t × 107 buses ≈ 2.140 t al año<span class="muted">Supone que cada bus nuevo recorre y reemplaza lo mismo que la flota de referencia.</span></p>
+    <div class="buses107" id="buses107" aria-label="140 buses: 41 actuales y 99 públicos nuevos"></div>
+    <div class="wlegend rv" style="--d:900"><span><i style="background:var(--mio)"></i>41 en operación</span><span><i style="background:var(--bici)"></i>99 públicos nuevos (33 + 66)</span></div>
+    <p class="eq rv" style="--d:1000">20 t × 140 buses = 2.800 t al año<span class="muted">Supone que cada bus recorre y reemplaza lo mismo que la flota de referencia. Solo con los 99 buses públicos nuevos, la estimación sería de 1.980 t al año.</span></p>
   </div>
-  <div class="src" style="right:620px">Celsia (2019); Alcaldía de Cali (2026c, 2026f); cálculo del grupo</div>
-  <aside class="notes">Presenta: [Integrante 4]. Aclarar que es una estimación proporcional hecha por el grupo a partir de la cifra de Celsia, no un dato oficial.</aside>
+  <div class="src" style="right:620px">Celsia (2019); Metro Cali (2026a, 2026b); Alcaldía de Cali (2026f); cálculo del grupo</div>
+  <aside class="notes">Presenta: Manuel Villamarin. Es una estimación proporcional del grupo a partir de la cifra de Celsia, no un dato oficial. La base es el acumulado del sistema: 41 eléctricos actuales + 99 públicos nuevos (33 de la primera compra y 66 del Acuerdo 096) = 140 buses, coherente con la diapositiva de renovación de la flota. Si solo se cuentan los 99 nuevos, el resultado es 20 t × 99 = 1.980 t al año. Como referencia, Metro Cali estima unas 21.000 t de CO₂ equivalente al año para los 340 buses de la segunda compra, y no es comparable: incluye buses diésel Euro VI que sustituyen unidades antiguas.</aside>
 </section>
 
 <!-- ===================================================================
@@ -1642,7 +1682,7 @@ function buildGraphics() {
       dots.appendChild(el);
     }
   }
-  // 387 buses de las compras públicas: 101 eléctricos / 286 diésel
+  // 385 buses públicos nuevos: 99 eléctricos / 286 diésel
   const w = document.getElementById('waffle387');
   if (w && !w.children.length) {
     const total = +w.dataset.total, e = +w.dataset.e;
@@ -1653,15 +1693,15 @@ function buildGraphics() {
       w.appendChild(el);
     }
   }
-  // 107 buses eléctricos: 41 actuales + 66 aprobados
+  // 140 buses eléctricos: 41 actuales + 99 públicos nuevos
   const b = document.getElementById('buses107');
   if (b && !b.children.length) {
-    for (let i = 0; i < 107; i++) {
+    for (let i = 0; i < 140; i++) {
       const ns = 'http://www.w3.org/2000/svg';
       const s = document.createElementNS(ns, 'svg');
       s.setAttribute('viewBox', '0 0 46 30');
       s.setAttribute('class', i < 41 ? 'a' : 'n');
-      s.style.transitionDelay = (900 + i * 14) + 'ms';
+      s.style.transitionDelay = (900 + i * 11) + 'ms';
       const u = document.createElementNS(ns, 'use'); u.setAttribute('href', '#i-busfill');
       s.appendChild(u); b.appendChild(s);
     }
